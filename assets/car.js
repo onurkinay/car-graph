@@ -1,14 +1,12 @@
-//init object globally
 var objImage = null;
 var hiz = 0;
 var surdur = true;
-setInterval(sendHiz, 1000);//onkeydown='getKeyAndMove(event)' onkeyup='Sifirla()'
+setInterval(sendHiz, 1000); 
 
 function init() {
     objImage = document.getElementById("image1");
     objImage.style.position = 'relative';
-    objImage.style.left = '0px';
-    
+    objImage.style.left = '0px'; 
 }
 
 function getKeyAndMove(e) {
@@ -54,7 +52,7 @@ function getKeyAndMove(e) {
 
 function moveLeft() {
        if(parseInt(objImage.style.left, 10) > 0) {
-            hiz = -1;
+            hiz = -10;
         objImage.style.left = parseInt(objImage.style.left) - 1 + 'px';
           if(parseInt(objImage.style.left, 10) <= 0) {
                   objImage.style.left = window.innerWidth-150 + 'px';
@@ -77,10 +75,10 @@ function moveLeftAcc() {
 }
 
 function moveRight() {
-      if(parseInt(objImage.style.left, 10) < window.innerWidth) {
-            hiz = 1;
+      if(parseInt(objImage.style.left, 10) < window.innerWidth-150) {
+            hiz = 10;
          objImage.style.left = parseInt(objImage.style.left) + 1 + 'px';
-   if(parseInt(objImage.style.left, 10) > window.innerWidth) {
+   if(parseInt(objImage.style.left, 10) > window.innerWidth-130) {
                   objImage.style.left = 0+ 'px';
            }
      }
@@ -88,10 +86,10 @@ function moveRight() {
 }
 
 function moveRightAcc() {
-     if(parseInt(objImage.style.left, 10) < window.innerWidth) {
+     if(parseInt(objImage.style.left, 10) < window.innerWidth-150) {
           hiz += 0.3;
          objImage.style.left = parseInt(objImage.style.left) + hiz + 'px';
-           if(parseInt(objImage.style.left, 10) > window.innerWidth) {
+           if(parseInt(objImage.style.left, 10) > window.innerWidth-130) {
                   objImage.style.left = 0+ 'px';
            }
 
