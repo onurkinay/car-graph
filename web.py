@@ -27,7 +27,7 @@ app.title = "Araba grafiği çizme uygulaması"
 
 app.layout = html.Div(html.Div(
     [
-        dbc.Row(dbc.Col(html.Iframe(src=app.get_asset_url("car.html"), width="100%", id="car4", height="100px",style={'border':'none', 'overflow':'hidden'}))),
+        dbc.Row(dbc.Col(html.Iframe(src=app.get_asset_url("car.html"), width="100%", height="100px",style={'border':'none', 'overflow':'hidden'}))),
         dbc.Row(
             [
 dbc.Col([
@@ -128,5 +128,5 @@ def update_graph_live(n):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=False, host='0.0.0.0', port=8000)
+    app.run_server(debug=False, host='0.0.0.0', port=80)
 
